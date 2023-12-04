@@ -1,0 +1,26 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: myshop-web
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+
+
+## ??Ribbon???????
+#myshop-user:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  circuitbreaker:
+    enabled: true
+ribbon:
+  eureka:
+    enabled: true
